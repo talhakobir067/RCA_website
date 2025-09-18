@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RCA Official</title>
+  <link rel="stylesheet" href="./dist/output.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-amber-50 font-Poppins">
+<nav class="w-full fixed top-0 bg-red-700 backdrop-blur-md shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+  <img src="./image/RCA.png" alt="RCA Logo" class="h-16 w-auto">
+
+  <!-- Text stacked in a column -->
+  <div class="flex flex-col leading-tight">
+    <span class="text-amber-50 text-xl font-bold">RCA</span>
+    <span class="text-amber-50 text-lg font-semibold">
+      Rajshahi City Association
+    </span>
+  </div>
+</a>
+
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-8 text-amber-50 font-semibold uppercase text-sm">
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="home"></i><a href="Home.html">Home</a>
+      </li>
+
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="info"></i><a href="What.html">About</a>
+      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="newspaper"></i><a href="news.html">News</a>
+      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="calendar"></i><a href="event.html">Events</a>
+      </li>
+      
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="book-open"></i><a href="DonorList.html">Library</a>
+      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="users"></i><a href="DonorList.html">Alumni</a>
+      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="user-plus"></i><a href="DonorList.html">Membership</a>
+      </li>
+      <li>
+        <button class="bg-red-600 text-amber-50 text-xl font-bold px-8 py-3 rounded-full hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-lg">
+        Join as a Alumni
+      </button></li>
+    </ul>
+
+    <!-- Hamburger Menu -->
+    <div id="hamburger" class="space-y-1 md:hidden cursor-pointer z-20">
+      <div class="w-6 h-0.5 bg-amber-50"></div>
+      <div class="w-6 h-0.5 bg-amber-50"></div>
+      <div class="w-6 h-0.5 bg-amber-50"></div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <ul id="menu" class="hidden absolute top-16 right-6 bg-black/90 p-5 rounded-2xl space-y-4 text-sm uppercase text-white">
+      <li class="flex items-center space-x-1"><i data-lucide="home"></i><a href="Home.html">Home</a></li>
+      <li class="flex items-center space-x-1"><i data-lucide="info"></i><a href="What.html">About</a></li>
+      <li class="flex items-center space-x-1"><i data-lucide="newspaper"></i><a href="news.html">News</a></li>
+      <li class="flex items-center space-x-1"><i data-lucide="calendar"></i><a href="event.html">Events</a></li>
+      <li class="flex items-center space-x-1"><i data-lucide="phone"></i><a href="DonorList.html">Contact</a></li>
+      <li class="flex items-center space-x-1"><i data-lucide="book-open"></i><a href="DonorList.html">Library</a></li>
+      <li class="flex items-center space-x-1"><i data-lucide="users"></i><a href="DonorList.html">Alumni</a></li>
+      <li class="flex items-center space-x-1"><i data-lucide="user-plus"></i><a href="DonorList.html">Membership</a></li>
+      <li>
+        <button class="bg-red-600 text-amber-50 text-xl font-bold px-8 py-3 rounded-full hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-lg">
+        Join as a Alumni
+      </button>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<!-- ░░░ Hero ░░░  -->
+<section class="pt-40 pb-20 px-6 md:px-16 lg:px-32">
+  <div class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-x-20">
+
+    <div class="lg:w-1/2 text-center lg:text-left space-y-4">
+      <h2 class="text-5xl font-bold uppercase text-black">
+        WELCOME TO
+      </h2>
+
+      <span class="block text-5xl font-bold uppercase text-red-600">
+        RAJSHAHI CITY ASSOCIATION RUET
+      </span>
+
+      <p class="text-xl text-gray-700">
+        Uniting Rajshahi City Students and Alumni of RUET to share knowledge,
+        inspire growth and build a strong network.
+      </p>
+    </div>
+
+    
+    <div class="lg:w-1/2 flex justify-center">
+      <img src="./image/RCA.png"
+           alt="RCA Photo"
+           class="w max-w-60">
+    </div>
+
+  </div>
+</section>
+
+<style>
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeSlide {
+  animation: fadeSlide 1s ease-out forwards;
+}
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+</style>
+
+
+
+<div class="max-w-9xl mx-20  px-6 transform transition duration-500 hover:scale-105 hover:-translate-y-2">
+  <div class="swiper mySwiper rounded-xl shadow-2xl">
+
+    <div class="swiper-wrapper">
+      <div class="swiper-slide relative">
+        <img src="./image/IMG_0388.JPG" class="w-full h-96 object-cover">
+
+        
+        <div class="absolute inset-0 bg-black/40 flex flex-col justify-between p-6">
+          <div>
+            <h2 class="text-3xl font-bold text-amber-50">RAJSHAHI CITY ASSOCIATION, RUET</h2>
+            <p class="text-lg text-amber-50">Serving the community together</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button onclick="window.location.href='https://www.facebook.com/profile.php/?id=100069227313850';"
+  class="bg-red-600 text-white text-xl font-bold px-8 py-3 rounded-full hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-lg">
+              JOIN US
+            </button>
+            <i onclick="swiper.slideNext()"
+               class="text-3xl text-amber-50 cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+      
+      
+
+      <div class="swiper-slide relative">
+        <img src="./image/IMG_0387.JPG" class="w-full h-96 object-cover">
+        <div class="absolute inset-0 bg-black/40 flex flex-col justify-between p-6">
+          <div>
+            <h2 class="text-3xl font-bold text-amber-50">ALUMNI NETWORK</h2>
+            <p class="text-lg text-amber-50">Connecting RUET Alumni and Students</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button onclick="swiper.slideNext()"
+              class="bg-red-600 font-bold hover:bg-red-700 text-amber-50 px-6 py-2 rounded-full">
+              JOIN AS AN ALUMNI
+            </button>
+            <i onclick="swiper.slideNext()"
+               class="text-3xl text-amber-50 cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide relative">
+        <img src="./image/Green Yellow Books Library Fundraising Raffle Ticket.jpg" class="w-full h-96 object-cover">
+        <div class="absolute inset-0 bg-black/40 flex flex-col justify-between p-6">
+          <div>
+            <h2 class="text-3xl font-bold text-amber-50">BOOK LIBRARY</h2>
+            <p class="text-lg text-amber-50">Finding your departmental books</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button onclick="swiper.slideNext()"
+              class="bg-red-600 font-bold hover:bg-red-700 text-amber-50 px-6 py-2 rounded-full">
+              BROWSE YOUR BOOK
+            </button>
+            <i onclick="swiper.slideNext()"
+               class="text-3xl text-amber-50 cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+      
+
+<div class="swiper-slide relative">
+        <img src="./image/IMG_0389.JPG" class="w-full h-96 object-cover">
+        <div class="absolute inset-0 bg-black/40 flex flex-col justify-between p-6">
+          <div>
+            <h2 class="text-3xl font-bold text-amber-50">CHARITY WORK</h2>
+            <p class="text-lg text-amber-50"> Helping hands, brighter lives</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button onclick="swiper.slideNext()"
+              class="bg-red-600 font-bold hover:bg-red-700 text-white px-6 py-2 rounded-full">
+              DONATE
+            </button>
+            <i onclick="swiper.slideNext()"
+               class="text-3xl text-amber-50 cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide relative">
+        <img src="./image/IMG_0591.JPG" class="w-full h-96 object-cover">
+        <div class="absolute inset-0 bg-black/40 flex flex-col justify-between p-6">
+          <div>
+            <h2 class="text-3xl font-bold text-amber-50">RCA 19 SERIES FAREWELL AND 24 RECEPTION</h2>
+            <p class="text-lg text-amber-50">New faces arrive, old memories remain</p>
+          </div>
+          <div class="flex items-center space-x-4">
+            <button onclick="swiper.slideNext()"
+              class="bg-red-600 font-bold hover:bg-red-700 text-white px-6 py-2 rounded-full">
+              MEMBERSHIP
+            </button>
+            <i onclick="swiper.slideNext()"
+class="text-3xl text-amber-50 cursor-pointer"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional navigation/pagination -->
+    <div class="swiper-button-next text-amber-50"></div>
+    <div class="swiper-button-prev text-amber-50"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    autoplay: false,        
+    slidesPerView: 1,
+    spaceBetween: 30,
+    grabCursor: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+  });
+</script>
+
+<!--Menu card script-->
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  hamburger.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+  lucide.createIcons();
+</script>
+
+<footer class="bg-red-600 text-white mt-12">
+  <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row md:justify-between gap-10">
+
+    <!-- Contact Info -->
+    <div class="flex-1 space-y-2">
+      <h3 class="text-lg font-semibold mb-2">Contact Us</h3>
+      <p>Rajshahi City Association</p>
+      <p>Rajshahi University of Engineering and Technology-6204</p>
+      <p>Email: <a href="mailto:rcaruet@gmail.com" class="underline hover:text-gray-200">rcaruet@gmail.com</a></p>
+      <p>Facebook Link: <a href="https://www.facebook.com/profile.php?id=100069227313850" target="_blank" class="underline hover:text-gray-200">Rajshahi City Association</a></p>
+      <p>Facebook Group Link : <a href="https://www.facebook.com/groups/183436285027318" class="underline hover:text-gray-200">Rajshahi City Association</a></p>
+    </div>
+
+    <!-- Useful Links -->
+    <div class="flex-1 space-y-2">
+      <h3 class="text-lg font-semibold mb-2">Useful Links</h3>
+      <ul class="space-y-1">
+        <li><a href="https://cao.gov.bd/" class="hover:underline">প্রধান উপদেষ্টার কার্যালয়</a></li>
+        <li><a href="https://shed.gov.bd/" class="hover:underline">Ministry of Education</a></li>
+        <li><a href="https://dshe.gov.bd/" class="hover:underline">DSHE</a></li>
+        <li><a href="https://www.ruet.ac.bd/" class="hover:underline">RUET</a></li>
+        <li><a href="https://www.iebbd.org/" class="hover:underline">IEB</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+  <div class="mt-6 text-center text-sm text-white/90">
+    Kaif-Talha © 2025
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>
