@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membership | RCA RUET</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-amber-50">
+
+<!-- ░░░ Navbar ░░░ -->
+<nav class="w-full fixed top-0 bg-red-700 shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <img src="./image/RCA.png" alt="RCA Logo" class="h-14">
+      <div class="leading-tight">
+        <p class="text-amber-50 text-xl font-bold">RCA</p>
+        <p class="text-amber-50 text-sm font-semibold">Rajshahi City Association</p>
+      </div>
+    </div>
+    <a href="Home.html" class="text-amber-50 font-semibold hover:underline">Home</a>
+  </div>
+</nav>
+
+<!-- ░░░ Header ░░░ -->
+<section class="pt-40 pb-8 px-6 text-center">
+  <h1 class="text-4xl font-bold text-red-700 mb-2">RCA Members</h1>
+  <p class="text-gray-700 mb-6">RCA Executive Committee 2025–26</p>
+
+  <!-- 🔍 Filter Box -->
+  <div class="max-w-md mx-auto">
+    <input
+      id="filterInput"
+      type="text"
+      placeholder="Search by name, designation, department, series..."
+      class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400"
+    />
+  </div>
+</section>
+
+<!-- ░░░ Members ░░░ -->
+<section class="pb-24 px-6">
+  <div id="memberGrid"
+       class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+  </div>
+</section>
+
+<!-- ░░░ Footer ░░░ -->
+<footer class="bg-red-600 text-white">
+  <div class="max-w-7xl mx-auto px-6 py-8 text-center">
+    <p class="text-sm">Talha © 2025</p>
+  </div>
+</footer>
+
+<!-- ░░░ Google Sheet Script ░░░ -->
+<script>
+  /*
+    Sheet columns:
+    A: Name
+    B: Designation
+    C: Department
+    D: Series
+    E: Photo (Google Drive file link)
+  */
+
+  const sheetID = "1C4iR7Dcov7waR1wjrlCwVWOWYE2Q_bSbV68NuJx0Wrs";
+  const gid = "0";
+  const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?gid=${gid}`;
+
+  const grid = document.getElementById("memberGrid");
+  const filterInput = document.getElementById("filterInput");
+  let memberData = [];
+
+  // Google Drive → image
+  function driveToImage(link) {
+    if (!link) return "";
+    const match = link.match(/[-\w]{25,}/);
+    return match
+      ? `https://drive.google.com/thumbnail?id=${match[0]}&sz=w300`
+      : "";
+  }
+
+  function renderCards(data) {
+    grid.innerHTML = "";
+
+    data.forEach(m => {
+      const fallback =
+        `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(m.name)}`;
+
+      const card = document.createElement("div");
+      card.className =
+        "bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl transition";
+
+      card.innerHTML = `
+        <img src="${m.photo || fallback}"
+             onerror="this.src='${fallback}'"
+             class="w-24 h-24 mx-auto rounded-full mb-4 object-cover bg-gray-100"
+             alt="${m.name}">
+
+        <h3 class="text-lg font-bold text-gray-800">${m.name}</h3>
+        <p class="text-sm text-red-600 font-semibold">${m.designation}</p>
+
+        <div class="mt-3 text-sm text-gray-600 space-y-1">
+          <p><span class="font-semibold">Department:</span> ${m.department}</p>
+          <p><span class="font-semibold">Series:</span> ${m.series}</p>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  fetch(url)
+    .then(res => res.text())
+    .then(data => {
+      const json = JSON.parse(data.substring(47).slice(0, -2));
+      const rows = json.table.rows;
+
+      memberData = rows.map(row => ({
+        name: String(row.c[0]?.v ?? ""),
+        designation: String(row.c[1]?.v ?? ""),
+        department: String(row.c[2]?.v ?? ""),
+        series: String(row.c[3]?.v ?? ""),
+        photo: driveToImage(row.c[4]?.v ?? "")
+      }));
+
+      renderCards(memberData);
+    })
+    .catch(err => console.error("Sheet load error:", err));
+
+  // 🔍 FILTER LOGIC (FIXED)
+  filterInput.addEventListener("input", e => {
+    const q = e.target.value.toLowerCase();
+
+    const filtered = memberData.filter(m =>
+      m.name.toLowerCase().includes(q) ||
+      m.designation.toLowerCase().includes(q) ||
+      m.department.toLowerCase().includes(q) ||
+      m.series.toLowerCase().includes(q)
+    );
+
+    renderCards(filtered);
+  });
+</script>
+
+</body>
+</html>

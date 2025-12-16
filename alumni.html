@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alumni | RCA RUET</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-amber-50">
+
+<!-- ░░░ Navbar ░░░ -->
+<nav class="w-full fixed top-0 bg-red-700 shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <img src="./image/RCA.png" alt="RCA Logo" class="h-14">
+      <div class="leading-tight">
+        <p class="text-amber-50 text-xl font-bold">RCA</p>
+        <p class="text-amber-50 text-sm font-semibold">Rajshahi City Association</p>
+      </div>
+    </div>
+    <a href="Home.html" class="text-amber-50 font-semibold hover:underline">Home</a>
+  </div>
+</nav>
+
+<!-- ░░░ Header ░░░ -->
+<section class="pt-40 pb-6 px-6 text-center">
+  <h1 class="text-4xl font-bold text-red-700 mb-2">RCA Alumni</h1>
+  <p class="text-gray-700 mb-6">RUET Alumni Directory</p>
+
+  <!-- 🔍 Filter -->
+  <div class="max-w-md mx-auto">
+    <input
+      id="filterInput"
+      type="text"
+      placeholder="Search by name, department, series, workplace..."
+      class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400"
+    />
+  </div>
+</section>
+
+<!-- ░░░ Alumni Cards ░░░ -->
+<section class="pb-24 px-6">
+  <div id="alumniGrid"
+       class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+  </div>
+</section>
+
+<!-- ░░░ Footer ░░░ -->
+<footer class="bg-red-600 text-white">
+  <div class="max-w-7xl mx-auto px-6 py-8 text-center">
+    <p class="text-sm">Talha © 2025</p>
+  </div>
+</footer>
+
+<!-- ░░░ Script ░░░ -->
+<script>
+  /*
+    Google Sheet Columns:
+    A: Name
+    B: Department
+    C: Series
+    D: Contact No
+    E: Email
+    F: Working Place
+  */
+
+  const sheetID = "1M0wl4IRBs5v5N2iQ_XM2FzMuvsG8vj9VdWAyB5ncqL8";
+  const gid = "0";
+  const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?gid=${gid}`;
+
+  const grid = document.getElementById("alumniGrid");
+  const filterInput = document.getElementById("filterInput");
+  let alumniData = [];
+
+  // 🎨 Anonymous color generator
+  function randomColor() {
+    const colors = [
+      "#f87171", "#fb923c", "#facc15", "#4ade80",
+      "#22d3ee", "#60a5fa", "#a78bfa", "#f472b6"
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  function renderCards(data) {
+    grid.innerHTML = "";
+    data.forEach(a => {
+      const card = document.createElement("div");
+      card.className =
+        "bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition";
+
+      card.innerHTML = `
+        <div class="w-24 h-24 mx-auto rounded-full mb-4"
+             style="background:${a.color}"></div>
+
+        <h3 class="text-lg font-bold text-gray-800 text-center">${a.name}</h3>
+        <p class="text-sm text-red-600 font-semibold text-center">${a.department}</p>
+
+        <div class="mt-3 text-sm text-gray-600 space-y-1">
+          <p><span class="font-semibold">Series:</span> ${a.series}</p>
+          <p><span class="font-semibold">Contact:</span> ${a.contact}</p>
+          <p class="break-all"><span class="font-semibold">Email:</span> ${a.email}</p>
+          <p><span class="font-semibold">Working At:</span> ${a.workplace}</p>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  fetch(url)
+    .then(res => res.text())
+    .then(data => {
+      const json = JSON.parse(data.substring(47).slice(0, -2));
+      const rows = json.table.rows;
+
+      alumniData = rows.map(row => ({
+        name: String(row.c[0]?.v ?? ""),
+        department: String(row.c[1]?.v ?? ""),
+        series: String(row.c[2]?.v ?? ""),
+        contact: String(row.c[3]?.v ?? ""),
+        email: String(row.c[4]?.v ?? ""),
+        workplace: String(row.c[5]?.v ?? ""),
+        color: randomColor()
+      }));
+
+      renderCards(alumniData);
+    })
+    .catch(err => console.error("Sheet load error:", err));
+
+  // 🔍 FILTER (FIXED)
+  filterInput.addEventListener("input", e => {
+    const q = e.target.value.toLowerCase();
+
+    const filtered = alumniData.filter(a =>
+      a.name.toLowerCase().includes(q) ||
+      a.department.toLowerCase().includes(q) ||
+      a.series.toLowerCase().includes(q) ||
+      a.workplace.toLowerCase().includes(q)
+    );
+
+    renderCards(filtered);
+  });
+</script>
+
+</body>
+</html>

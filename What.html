@@ -3,67 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RCA Official</title>
-  <link rel="stylesheet" href="./dist/output.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  body {
-    font-family: 'Poppins', sans-serif;
-  }
-</style>
-<link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <title>RCA Official | RUET</title>
 
-<script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
 </head>
 
-<body class="bg-amber-50 text-red-600 font-Poppins">
+<body class="bg-amber-50 text-red-600">
+
+<!-- Navbar -->
 <nav class="w-full fixed top-0 bg-red-600 backdrop-blur-md shadow-md z-50">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-  <img src="./image/RCA.png" alt="RCA Logo" class="h-16 w-auto">
-
-  <!-- Text stacked in a column -->
-  <div class="flex flex-col leading-tight">
-    <span class="text-amber-50 text-xl font-bold">RCA</span>
-    <span class="text-amber-50 text-lg font-semibold">
-      Rajshahi City Association
-    </span>
-  </div>
-</a>
-
+    <div class="flex items-center space-x-3">
+      <img src="./image/RCA.png" alt="RCA Logo" class="h-16 w-auto">
+      <div class="flex flex-col leading-tight">
+        <span class="text-amber-50 text-xl font-bold">RCA</span>
+        <span class="text-amber-50 text-lg font-semibold">Rajshahi City Association</span>
+      </div>
+    </div>
 
     <!-- Desktop Menu -->
     <ul class="hidden md:flex space-x-8 text-amber-50 font-semibold uppercase text-sm">
-      <li class="flex items-center space-x-1 hover:scale-110 transition">
-        <i data-lucide="home"></i><a href="Home.html">Home</a>
-      </li>
-
-      <li class="flex items-center space-x-1 hover:scale-110 transition">
-        <i data-lucide="info"></i><a href="What.html">About</a>
-      </li>
-      <li class="flex items-center space-x-1 hover:scale-110 transition">
-        <i data-lucide="newspaper"></i><a href="news.html">News</a>
-      </li>
-      <li class="flex items-center space-x-1 hover:scale-110 transition">
-        <i data-lucide="calendar"></i><a href="event.html">Events</a>
-      </li>
-      
-      <li class="flex items-center space-x-1 hover:scale-110 transition">
-        <i data-lucide="book-open"></i><a href="DonorList.html">Library</a>
-      </li>
-      <li class="flex items-center space-x-1 hover:scale-110 transition">
-        <i data-lucide="users"></i><a href="DonorList.html">Alumni</a>
-      </li>
-      <li class="flex items-center space-x-1 hover:scale-110 transition">
-        <i data-lucide="user-plus"></i><a href="DonorList.html">Membership</a>
-      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition"><i data-lucide="home"></i><a href="Home.html">Home</a></li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition"><i data-lucide="info"></i><a href="What.html">About</a></li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition"><i data-lucide="newspaper"></i><a href="news.html">News</a></li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition"><i data-lucide="calendar"></i><a href="event.html">Events</a></li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition"><i data-lucide="book-open"></i><a href="library.html">Library</a></li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition"><i data-lucide="users"></i><a href="alumni.html">Alumni</a></li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition"><i data-lucide="user-plus"></i><a href="membership.html">Membership</a></li>
       <li>
-        <button class="bg-red-600 text-amber-50 text-xl font-bold px-8 py-3 rounded-full hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-lg">
-        Join as a Alumni
-      </button></li>
+        <button class="bg-red-700 text-amber-50 text-xl font-bold px-6 py-2 rounded-full hover:bg-red-800 hover:scale-105 transition-all duration-300 shadow-lg">Join as Alumni</button>
+      </li>
     </ul>
 
     <!-- Hamburger Menu -->
@@ -79,52 +56,45 @@
       <li class="flex items-center space-x-1"><i data-lucide="info"></i><a href="What.html">About</a></li>
       <li class="flex items-center space-x-1"><i data-lucide="newspaper"></i><a href="news.html">News</a></li>
       <li class="flex items-center space-x-1"><i data-lucide="calendar"></i><a href="event.html">Events</a></li>
-      <li class="flex items-center space-x-1"><i data-lucide="phone"></i><a href="DonorList.html">Contact</a></li>
-      <li class="flex items-center space-x-1"><i data-lucide="book-open"></i><a href="DonorList.html">Library</a></li>
-      <li class="flex items-center space-x-1"><i data-lucide="users"></i><a href="DonorList.html">Alumni</a></li>
-      <li class="flex items-center space-x-1"><i data-lucide="user-plus"></i><a href="DonorList.html">Membership</a></li>
+      <li class="flex items-center space-x-1"><i data-lucide="book-open"></i><a href="library.html">Library</a></li>
+      <li class="flex items-center space-x-1"><i data-lucide="users"></i><a href="alumni.html">Alumni</a></li>
+      <li class="flex items-center space-x-1"><i data-lucide="user-plus"></i><a href="membership.html">Membership</a></li>
       <li>
-        <button class="bg-red-600 text-amber-50 text-xl font-bold px-8 py-3 rounded-full hover:bg-red-700 hover:scale-105 transition-all duration-300 shadow-lg">
-        Join as a Alumni
-      </button>
+        <button class="bg-red-700 text-amber-50 text-xl font-bold px-6 py-2 rounded-full hover:bg-red-800 hover:scale-105 transition-all duration-300 shadow-lg">Join as Alumni</button>
       </li>
     </ul>
-
   </div>
 </nav>
-  <section class="pt-32 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10">
-  
-  
+
+<!-- Hero / Intro Section -->
+<section class="pt-32 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10">
+  <!-- Image -->
   <div class="flex-1 flex justify-center md:justify-start">
-  <img src="image/RCA.png" 
-       alt="Blood Donation" 
-       class="w-64 sm:w-80 md:w-96 lg:w-80 rounded-2xl 
-              transition-transform transition duration-500 
-              hover:scale-105">
-</div>
-
-
-  
-  <div class="flex-1 text-center md:text-left space-y-6">
-    <p class="text-red-600 text-lg md:text-xl">
-     The Rajshahi City Association (RCA) of RUET, established in 2003, has been dedicated to connecting students and alumni from Rajshahi City, fostering a strong and supportive community. Over the years, the association has actively organized a variety of programs, including farewells, receptions, and cultural events like Pitha Utsab. 
-     
-    </p>
-    <p class="text-red-600 text-lg md:text-xl">
-        In addition to social and cultural activities, RCA is committed to charitable and community-focused initiatives such as cleaning campaigns, tree plantation drives, and other charity works, making a positive impact both within and beyond the university.
-
-    </p>
+    <img src="./image/RCA.png" 
+         alt="RCA Logo" 
+         class="w-64 sm:w-80 md:w-96 lg:w-80 rounded-2xl shadow-lg transition-transform duration-500 hover:scale-105">
   </div>
 
+  <!-- Text -->
+  <div class="flex-1 text-center md:text-left space-y-6">
+    <h2 class="text-3xl font-bold text-red-700">About RCA</h2>
+    <p class="text-red-600 text-lg md:text-xl leading-relaxed">
+      The Rajshahi City Association (RCA) of RUET, established in 2003, has been dedicated to connecting students and alumni from Rajshahi City, fostering a strong and supportive community. Over the years, the association has actively organized a variety of programs, including farewells, receptions, and cultural events like Pitha Utsab.
+    </p>
+    <p class="text-red-600 text-lg md:text-xl leading-relaxed">
+      In addition to social and cultural activities, RCA is committed to charitable and community-focused initiatives such as cleaning campaigns, tree plantation drives, and other charity works, making a positive impact both within and beyond the university.
+    </p>
+    
+  </div>
 </section>
+
+<!-- Scripts -->
 <script>
   const hamburger = document.getElementById('hamburger');
   const menu = document.getElementById('menu');
-  hamburger.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+  hamburger.addEventListener('click', () => menu.classList.toggle('hidden'));
   lucide.createIcons();
 </script>
 
-
 </body>
 </html>
-
