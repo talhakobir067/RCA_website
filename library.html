@@ -17,7 +17,7 @@
 
 <body class="bg-amber-50">
 
-<!-- ░░░ Navbar (same style as your site) ░░░ -->
+<!-- ░░░ Navbar ░░░ -->
 <nav class="w-full fixed top-0 bg-red-700 shadow-md z-50">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center space-x-3">
@@ -29,49 +29,128 @@
     </div>
 
     <ul class="hidden md:flex space-x-8 text-amber-50 font-semibold uppercase text-sm">
-      <li class="hover:scale-110 transition"><a href="Home.html">Home</a></li>
-      <li class="hover:scale-110 transition"><a href="What.html">About</a></li>
-      <li class="hover:scale-110 transition"><a href="event.html">Events</a></li>
-      <li class="hover:scale-110 transition"><a href="library.html" class="underline">Library</a></li>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="What.html">About</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="library.html" class="underline">Library</a></li>
     </ul>
   </div>
 </nav>
 
 <!-- ░░░ Library Section ░░░ -->
 <section class="pt-40 pb-24 px-6">
-  <div class="max-w-5xl mx-auto text-center">
+  <div class="max-w-6xl mx-auto text-center">
     <h1 class="text-4xl md:text-5xl font-bold text-red-700 uppercase mb-4">
       RCA Book Library
     </h1>
     <p class="text-gray-700 text-lg mb-14">
-      Choose your department to explore available books and resources
+      Choose your department to explore books & resources
     </p>
-    <!-- Department Buttons -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-      <!-- CSE -->
-      <a href="cse_library.html"
-         class="group bg-white rounded-3xl shadow-xl p-12 hover:-translate-y-2 hover:shadow-2xl transition">
-        <div class="flex flex-col items-center space-y-4">
-          <i data-lucide="cpu" class="w-14 h-14 text-red-600 group-hover:scale-110 transition"></i>
-          <h2 class="text-3xl font-bold text-gray-800">CSE Department</h2>
-          <p class="text-gray-600">Computer Science & Engineering</p>
-          <span class="mt-4 inline-block bg-red-600 text-white px-8 py-3 rounded-full font-semibold">
-            Browse Books
-          </span>
-        </div>
+
+    <!-- ░░░ Department Cards ░░░ -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Reusable Card Template -->
+      <a href="cse_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+        <i data-lucide="cpu" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+        <h2 class="text-2xl font-bold">CSE</h2>
+        <p class="text-gray-600 mb-4">Computer Science & Engineering</p>
+        <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
       </a>
 
-      <!-- EEE -->
-      <a href="eee-library.html"
-         class="group bg-white rounded-3xl shadow-xl p-12 hover:-translate-y-2 hover:shadow-2xl transition">
-        <div class="flex flex-col items-center space-y-4">
-          <i data-lucide="zap" class="w-14 h-14 text-red-600 group-hover:scale-110 transition"></i>
-          <h2 class="text-3xl font-bold text-gray-800">EEE Department</h2>
-          <p class="text-gray-600">Electrical & Electronic Engineering</p>
-          <span class="mt-4 inline-block bg-red-600 text-white px-8 py-3 rounded-full font-semibold">
-            Browse Books
-          </span>
-        </div>
+      <a href="eee_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+        <i data-lucide="zap" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+        <h2 class="text-2xl font-bold">EEE</h2>
+        <p class="text-gray-600 mb-4">Electrical & Electronic Engineering</p>
+        <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+      </a>
+
+      <a href="ece_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+        <i data-lucide="radio" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+        <h2 class="text-2xl font-bold">ECE</h2>
+        <p class="text-gray-600 mb-4">Electronics & Communication Engineering</p>
+        <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+      </a>
+
+      <a href="ete_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+        <i data-lucide="antenna" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+        <h2 class="text-2xl font-bold">ETE</h2>
+        <p class="text-gray-600 mb-4">Electronics & Telecommunication Engineering</p>
+        <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+      </a>
+
+      <a href="ce_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+        <i data-lucide="building-2" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+        <h2 class="text-2xl font-bold">CE</h2>
+        <p class="text-gray-600 mb-4">Civil Engineering</p>
+        <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+      </a>
+
+      <a href="urp_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+        <i data-lucide="map" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+        <h2 class="text-2xl font-bold">URP</h2>
+        <p class="text-gray-600 mb-4">Urban & Regional Planning</p>
+        <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+      </a>
+
+         <!-- BECM -->
+  <a href="becm_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+    <i data-lucide="calculator" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+    <h2 class="text-2xl font-bold">BECM</h2>
+    <p class="text-gray-600 mb-4">Building Engineering & Construction Management</p>
+    <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+  </a>
+
+      <a href="arch_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+        <i data-lucide="home" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+        <h2 class="text-2xl font-bold">Arch</h2>
+        <p class="text-gray-600 mb-4">Architecture</p>
+        <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+      </a>
+
+      <a href="me_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+        <i data-lucide="settings" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+        <h2 class="text-2xl font-bold">ME</h2>
+        <p class="text-gray-600 mb-4">Mechanical Engineering</p>
+        <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+      </a>
+
+      <!-- CME -->
+  <a href="cme_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+    <i data-lucide="wrench" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+    <h2 class="text-2xl font-bold">CME</h2>
+    <p class="text-gray-600 mb-4">Chemical & Materials Engineering</p>
+    <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+  </a>
+
+  <!-- MTE -->
+  <a href="mte_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+    <i data-lucide="layers" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+    <h2 class="text-2xl font-bold">MTE</h2>
+    <p class="text-gray-600 mb-4">Mechatronics Engineering</p>
+    <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+  </a>
+
+  <!-- MSE -->
+  <a href="mse_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+    <i data-lucide="box" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+    <h2 class="text-2xl font-bold">MSE</h2>
+    <p class="text-gray-600 mb-4">Materials Science & Engineering</p>
+    <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+  </a>
+
+      <a href="ipe_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+        <i data-lucide="factory" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+        <h2 class="text-2xl font-bold">IPE</h2>
+        <p class="text-gray-600 mb-4">Industrial & Production Engineering</p>
+        <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
+      </a>
+
+      <a href="che_library.html" class="group bg-white rounded-3xl shadow-xl p-10 hover:-translate-y-2 hover:shadow-2xl transition">
+        <i data-lucide="flask-conical" class="w-14 h-14 mx-auto text-red-600 mb-4"></i>
+        <h2 class="text-2xl font-bold">ChE</h2>
+        <p class="text-gray-600 mb-4">Chemical Engineering</p>
+        <span class="bg-red-600 text-white px-6 py-2 rounded-full font-semibold">Browse</span>
       </a>
 
     </div>
