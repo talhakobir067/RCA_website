@@ -18,24 +18,81 @@
 <body class="bg-amber-50">
 
 <!-- ░░░ Navbar ░░░ -->
-<nav class="w-full fixed top-0 bg-red-700 shadow-md z-50">
+<nav class="w-full fixed top-0 bg-red-700 backdrop-blur-md shadow-md z-50">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- Logo -->
     <div class="flex items-center space-x-3">
-      <img src="./image/RCA.png" alt="RCA Logo" class="h-14" />
+      <img src="./image/RCA.png" alt="RCA Logo" class="h-14 w-auto">
       <div class="leading-tight">
         <p class="text-amber-50 text-xl font-bold">RCA</p>
-        <p class="text-amber-50 text-sm font-semibold">Rajshahi City Association</p>
+        <p class="text-amber-50 text-sm font-semibold">
+          Rajshahi City Association
+        </p>
       </div>
     </div>
 
+    <!-- Desktop Menu -->
     <ul class="hidden md:flex space-x-8 text-amber-50 font-semibold uppercase text-sm">
-      <li><a href="Home.html">Home</a></li>
-      <li><a href="What.html">About</a></li>
-      <li><a href="event.html">Events</a></li>
-      <li><a href="library.html" class="underline">Library</a></li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="home"></i><a href="Home.html">Home</a>
+      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="info"></i><a href="What.html">About</a>
+      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="newspaper"></i><a href="news.html">News</a>
+      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="calendar"></i><a href="event.html">Events</a>
+      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="book-open"></i>
+        <a href="library.html" class="underline">Library</a>
+      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="users"></i><a href="alumni.html">Alumni</a>
+      </li>
+      <li class="flex items-center space-x-1 hover:scale-110 transition">
+        <i data-lucide="user-plus"></i><a href="membership.html">Membership</a>
+      </li>
+      <li>
+        <a href="query.html">
+          <button class="bg-red-600 text-amber-50 text-sm font-bold px-6 py-2 rounded-full hover:bg-red-700 hover:scale-105 transition shadow-lg">
+            Any Query
+          </button>
+        </a>
+      </li>
     </ul>
+
+    <!-- Hamburger -->
+    <div id="hamburger" class="md:hidden cursor-pointer space-y-1">
+      <div class="w-6 h-0.5 bg-amber-50"></div>
+      <div class="w-6 h-0.5 bg-amber-50"></div>
+      <div class="w-6 h-0.5 bg-amber-50"></div>
+    </div>
   </div>
+
+  <!-- Mobile Menu -->
+  <ul id="menu"
+      class="hidden md:hidden absolute top-20 right-6 bg-black/90 p-5 rounded-2xl space-y-4 text-sm uppercase text-white w-56">
+    <li class="flex items-center space-x-2"><i data-lucide="home"></i><a href="Home.html">Home</a></li>
+    <li class="flex items-center space-x-2"><i data-lucide="info"></i><a href="What.html">About</a></li>
+    <li class="flex items-center space-x-2"><i data-lucide="newspaper"></i><a href="news.html">News</a></li>
+    <li class="flex items-center space-x-2"><i data-lucide="calendar"></i><a href="event.html">Events</a></li>
+    <li class="flex items-center space-x-2"><i data-lucide="book-open"></i><a href="library.html">Library</a></li>
+    <li class="flex items-center space-x-2"><i data-lucide="users"></i><a href="alumni.html">Alumni</a></li>
+    <li class="flex items-center space-x-2"><i data-lucide="user-plus"></i><a href="membership.html">Membership</a></li>
+    <li>
+      <a href="query.html">
+        <button class="w-full bg-red-600 text-amber-50 font-bold py-2 rounded-full hover:bg-red-700 transition">
+          Any Query
+        </button>
+      </a>
+    </li>
+  </ul>
 </nav>
+
 
 <!-- ░░░ Library Section ░░░ -->
 <section class="pt-40 pb-24 px-6">
@@ -165,8 +222,16 @@
 </footer>
 
 <script>
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+
   lucide.createIcons();
 </script>
+
 
 </body>
 </html>
