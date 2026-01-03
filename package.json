@@ -1,6 +1,27 @@
 {
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.1",
     "tailwindcss": "^4.1.13"
-  }
+  },
+  "name": "rca_website",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talhacpp/RCA_website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talhacpp/RCA_website/issues"
+  },
+  "homepage": "https://github.com/talhacpp/RCA_website#readme",
+  "description": ""
 }
