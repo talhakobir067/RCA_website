@@ -122,18 +122,18 @@ export default function RegisterPage() {
       <Navbar showQueryButton={false} />
 
       <section className="px-4 pb-20 pt-36 md:px-6">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-red-500/25 bg-slate-950/75 shadow-[0_24px_70px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-          <div className="border-b border-red-500/25 bg-gradient-to-r from-red-900/40 via-red-700/20 to-transparent p-8 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-amber-200">Membership Portal</p>
-            <h1 className="mt-3 text-4xl font-bold text-amber-50 md:text-5xl">Create Your RCA Profile</h1>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-amber-100/80 md:text-base">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-red-200/40 bg-white/50 shadow-[0_8px_32px_rgba(220,38,38,0.15)] backdrop-blur-lg transition-all duration-300 dark:border-red-500/25 dark:bg-slate-950/75 dark:shadow-[0_24px_70px_rgba(0,0,0,0.35)] dark:backdrop-blur-xl">
+          <div className="border-b border-red-100/40 bg-gradient-to-r from-red-100/60 via-red-50/40 to-transparent p-8 md:p-10 dark:border-red-500/25 dark:bg-gradient-to-r dark:from-red-900/40 dark:via-red-700/20 dark:to-transparent">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-700 dark:text-amber-200">Membership Portal</p>
+            <h1 className="mt-3 text-4xl font-bold md:text-5xl text-gray-900 dark:text-amber-50">Create Your RCA Profile</h1>
+            <p className="mt-2 max-w-3xl text-sm leading-6 md:text-base text-gray-700 dark:text-amber-100/80">
               Register once and get access to member-only resources and alumni networking. Fields adapt automatically to your selected membership type.
             </p>
           </div>
 
           <div className="p-6 md:p-10">
             {errors.length > 0 && (
-              <div className="mb-6 rounded-xl border border-red-300 bg-red-50 p-4 text-sm text-red-700">
+              <div className="mb-6 rounded-xl border border-red-300 bg-red-50 p-4 text-sm text-red-700 dark:border-red-500/40 dark:bg-red-950/50 dark:text-red-200">
                 {errors.map((error) => (
                   <p key={error}>{error}</p>
                 ))}
@@ -141,8 +141,8 @@ export default function RegisterPage() {
             )}
 
             <form className="space-y-6" onSubmit={handleSubmit}>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-6">
-                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200">Basic Info</p>
+              <div className="rounded-2xl border border-red-100/50 bg-white/50 p-4 md:p-6 backdrop-blur-sm transition-all duration-300 dark:border-white/10 dark:bg-white/5">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-red-700 dark:text-amber-200">Basic Info</p>
                 <div className="grid gap-4 md:grid-cols-3">
                   <input
                     className="rca-input"
@@ -169,8 +169,8 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-6">
-                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200">Membership Info</p>
+              <div className="rounded-2xl border border-red-100/50 bg-white/50 p-4 md:p-6 backdrop-blur-sm transition-all duration-300 dark:border-white/10 dark:bg-white/5">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-red-700 dark:text-amber-200">Membership Info</p>
                 <div className="grid gap-4 md:grid-cols-2 md:items-start">
                   <input
                     className="rca-input"
@@ -260,8 +260,8 @@ export default function RegisterPage() {
                 )}
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-6">
-                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200">Social Links (Optional)</p>
+              <div className="rounded-2xl border border-red-100/50 bg-white/50 p-4 md:p-6 backdrop-blur-sm transition-all duration-300 dark:border-white/10 dark:bg-white/5">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-red-700 dark:text-amber-200">Social Links (Optional)</p>
                 <div className="grid gap-3 md:grid-cols-3">
                   <select
                     className="rca-input"
@@ -291,7 +291,7 @@ export default function RegisterPage() {
                 </div>
                 <button
                   type="button"
-                  className="mt-3 rounded-full border border-red-500 px-4 py-2 text-sm font-semibold text-red-300 hover:bg-red-500/10"
+                  className="mt-3 rounded-full border border-red-400 px-4 py-2 text-sm font-semibold text-red-600 transition-all duration-300 hover:bg-red-400/10 dark:border-red-500 dark:text-red-300 dark:hover:bg-red-500/10"
                   onClick={addSocialLink}
                 >
                   + Add Social Link
@@ -301,14 +301,14 @@ export default function RegisterPage() {
                   {socialLinks.map((item, idx) => (
                     <div
                       key={`${item.platform}-${idx}`}
-                      className="flex items-center justify-between rounded-lg border border-white/10 bg-black/20 p-3 text-sm text-amber-100"
+                      className="flex items-center justify-between rounded-lg border border-red-100 bg-red-50/30 p-3 text-sm text-gray-700 dark:border-white/10 dark:bg-black/20 dark:text-amber-100"
                     >
                       <span>
                         {item.platform}: {item.url}
                       </span>
                       <button
                         type="button"
-                        className="font-semibold text-red-300"
+                        className="font-semibold text-red-600 hover:underline dark:text-red-300"
                         onClick={() => removeSocialLink(idx)}
                       >
                         Remove
@@ -318,8 +318,8 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-6">
-                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200">Security</p>
+              <div className="rounded-2xl border border-red-100/50 bg-white/50 p-4 md:p-6 backdrop-blur-sm transition-all duration-300 dark:border-white/10 dark:bg-white/5">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-red-700 dark:text-amber-200">Security</p>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
                     <input
@@ -330,13 +330,13 @@ export default function RegisterPage() {
                       onChange={(e) => updateField("password", e.target.value)}
                       required
                     />
-                    <div className="mt-2 h-2 rounded-full bg-white/15">
+                    <div className="mt-2 h-2 rounded-full bg-red-100 dark:bg-white/15">
                       <div
                         className="h-2 rounded-full bg-red-500"
                         style={{ width: `${Math.max(10, (pwdStrength / 5) * 100)}%` }}
                       />
                     </div>
-                    <p className="mt-1 text-xs text-amber-100/70">Password strength: {pwdStrength}/5</p>
+                    <p className="mt-1 text-xs text-gray-600 dark:text-amber-100/70">Password strength: {pwdStrength}/5</p>
                   </div>
                   <input
                     className="rca-input self-start"
@@ -353,9 +353,9 @@ export default function RegisterPage() {
                 {loading ? "Creating account..." : "Create Account"}
               </button>
 
-              <p className="text-center text-sm text-amber-100/80">
+              <p className="text-center text-sm text-gray-700 dark:text-amber-100/80">
                 Already have an account?{" "}
-                <Link href="/login" className="font-semibold text-red-300 underline">
+                <Link href="/login" className="font-semibold text-red-600 underline dark:text-red-300">
                   Login
                 </Link>
               </p>

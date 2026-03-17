@@ -86,7 +86,8 @@ export default function Navbar({ showQueryButton = true }: NavbarProps) {
 
   return (
     <nav className="site-nav">
-      <div className="mx-auto flex w-full max-w-7xl items-center px-4 py-4 md:px-6">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 md:px-6">
+        {/* Logo on Left */}
         <Link href="/" className="flex shrink-0 items-center space-x-3">
           <img src="/image/RCA.png" alt="RCA Logo" className="h-16 w-auto" />
           <div className="flex flex-col leading-tight">
@@ -97,6 +98,7 @@ export default function Navbar({ showQueryButton = true }: NavbarProps) {
           </div>
         </Link>
 
+        {/* Navigation in Center */}
         <div className="hidden flex-1 justify-center md:flex">
           <ul className="flex items-center space-x-6 text-xs font-semibold uppercase text-amber-50 lg:text-sm">
             {visibleNavItems.map((item) => (
@@ -113,7 +115,8 @@ export default function Navbar({ showQueryButton = true }: NavbarProps) {
           </ul>
         </div>
 
-        <div className="ml-auto hidden items-center gap-3 md:flex">
+        {/* Buttons on Right */}
+        <div className="flex items-center gap-3 md:ml-6">
           {showQueryButton && (
             <Link href="/query" className="rca-pill-button">
               Any Query

@@ -2,8 +2,7 @@ import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 import { createUserRecord, sanitizeUser } from "@/lib/auth/user";
 import { setAuthCookie, signSession } from "@/lib/auth/session";
-import { readAuthStore, writeAuthStore } from "@/lib/auth/storage";
-import { mirrorUserToSupabase } from "@/lib/auth/supabase";
+import { upsertUserToSupabase, getUserByEmailFromSupabase, getUserByPhoneFromSupabase } from "@/lib/auth/supabase";
 import { RegisterPayload } from "@/types/auth";
 import { validateRegisterPayload } from "@/lib/auth/validation";
 
@@ -16,13 +15,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ errors: validation.errors }, { status: 400 });
     }
 
-    const store = await readAuthStore();
     const email = payload.email.trim().toLowerCase();
-
-    const emailExists = store.users.some((user) => user.email === email);
-    const phoneExists = store.users.some(
-      (user) => user.phoneNumber === validation.normalizedPhone
-    );
+    const emailExists = await getUserByEmailFromSupabase(email);
+    const phoneExists = await getUserByPhoneFromSupabase(validation.normalizedPhone);
 
     if (emailExists || phoneExists) {
       return NextResponse.json(
@@ -34,9 +29,7 @@ export async function POST(request: Request) {
     const passwordHash = await bcrypt.hash(payload.password, 12);
     const user = createUserRecord(payload, passwordHash, validation.normalizedPhone);
 
-    store.users.push(user);
-    await writeAuthStore(store);
-    await mirrorUserToSupabase(user);
+    await upsertUserToSupabase(user);
 
     const token = await signSession({
       sub: user.id,

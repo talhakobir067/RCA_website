@@ -1,10 +1,10 @@
 import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 import { setAuthCookie, signSession } from "@/lib/auth/session";
-import { readAuthStore } from "@/lib/auth/storage";
 import { sanitizeUser } from "@/lib/auth/user";
 import { LoginPayload } from "@/types/auth";
 import { normalizePhone } from "@/lib/auth/validation";
+import { getUserByEmailFromSupabase, getUserByPhoneFromSupabase } from "@/lib/auth/supabase";
 
 export async function POST(request: Request) {
   try {
@@ -19,13 +19,11 @@ export async function POST(request: Request) {
       );
     }
 
-    const store = await readAuthStore();
     const normalized = normalizePhone(identifier);
     const email = identifier.toLowerCase();
 
-    const user = store.users.find(
-      (record) => record.email === email || record.phoneNumber === normalized
-    );
+    const userByEmail = await getUserByEmailFromSupabase(email);
+    const user = userByEmail || (await getUserByPhoneFromSupabase(normalized));
 
     if (!user) {
       return NextResponse.json({ error: "Invalid credentials." }, { status: 401 });
